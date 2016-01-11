@@ -1,5 +1,11 @@
 <resources>
   <string name="app_name">Gif小助手</string>
-  <string name="start_recoed_text_btn">开始录制</string>
+  <string name="start_record_text_btn">开始录制</string>
+  <string name="start_make_text_btn">开始制作</string>
+
   <string name="open_gif_file_text_btn">打开GIF</string>
+
+  <string name="record_title_tip">顶部不会被录制</string>
+  <string name="record_top_stop_text">点击结束录制</string>
+
 </resources>

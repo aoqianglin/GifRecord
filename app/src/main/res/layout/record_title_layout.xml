@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 正在录制时顶部的提示 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="@color/main_open_record_gif_bk"
+                android:layout_height="wrap_content">
+
+  <TextView
+      android:id="@+id/record_tip_and_time"
+      android:layout_centerVertical="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:text="@string/record_title_tip"
+      />
+
+  <TextView
+      android:id="@+id/record_stop_btn_tv"
+      android:layout_centerInParent="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/record_top_stop_text"
+      />
+
+</RelativeLayout>

@@ -4,8 +4,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 
+import com.gif.branch.gifrecord.Utils.SystemUtil;
 import com.gif.branch.gifrecord.endoder.AnimatedGifEncoder;
 
 import java.io.File;
@@ -15,68 +17,45 @@ import java.io.IOException;
 
 public class MainActivity extends BaseActivity {
 
-  private int width = 480;
-  private int height = 720;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    String path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/gif.gif";
-
-    FileOutputStream outputStream=null;
-    try {
-      File f=new File(path);
-      if(!f.exists()){
-        f.createNewFile();
-      }
-       outputStream=new FileOutputStream(path);
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
-
-    AnimatedGifEncoder animatedGifEncoder = new AnimatedGifEncoder();
-
-    animatedGifEncoder.start(outputStream);
-    animatedGifEncoder.setRepeat(0);
-    animatedGifEncoder.setFrameRate(60);
-    animatedGifEncoder.setQuality(15);
-
-    animatedGifEncoder.addFrame(decodeBitmap(R.mipmap.girl_1));
-    animatedGifEncoder.addFrame(decodeBitmap(R.mipmap.girl_2));
-    animatedGifEncoder.addFrame(decodeBitmap(R.mipmap.girl_3));
-
-    animatedGifEncoder.finish();
 
   }
 
-  private Bitmap decodeBitmap(int resId){
+  @Override
+  public void onWindowFocusChanged(boolean hasFocus) {
+    super.onWindowFocusChanged(hasFocus);
 
-    Bitmap b = null;
-    BitmapFactory.Options options = new BitmapFactory.Options();
-    options.inJustDecodeBounds = true;
-    BitmapFactory.decodeResource(getResources(), R.mipmap.girl_1);
-    if (options.outWidth > 0 && options.outHeight > 0) {
-      options.inSampleSize = (options.outWidth / width + options.outHeight / height) / 2;
-    }
-    options.inJustDecodeBounds=false;
+    initScreen();
+  }
 
-    b=BitmapFactory.decodeResource(getResources(),resId,options);
+  private void initScreen() {
+    ScreenInfo info = SystemUtil.getScreenSize(this);
+    int statusHeight = SystemUtil.getStatusHeight(this);
 
-    return b;
+    GifConst.mWidth = info.width;
+    GifConst.mHeight = info.height;
+    GifConst.mDensity = info.density;
+    GifConst.mStatusHeight = statusHeight;
+
+    Log.e("branch", "width: " + GifConst.mWidth + "  height: " + GifConst.mHeight + " statusHeight: " + GifConst.mStatusHeight + " mDensity: " + GifConst.mDensity);
   }
 
 
-  public void onMainBtnClick(View v){
-    switch (v.getId()){
+  public void onMainBtnClick(View v) {
+    switch (v.getId()) {
       case R.id.main_start_record_gif_tv:
+        startActivity(RecordActivity.newIntent(this));
 
         break;
       case R.id.main_open_record_gif_tv:
+
+        break;
+      case R.id.main_make_record_gif_tv:
 
         break;
 

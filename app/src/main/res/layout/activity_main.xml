@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-  <LinearLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_centerInParent="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:layout_centerInParent="true">
 
-    <TextView
-        android:id="@+id/main_start_record_gif_tv"
-        android:layout_width="@dimen/main_btn_width"
-        android:layout_height="wrap_content"
-        android:text="@string/start_recoed_text_btn"
-        android:paddingTop="@dimen/main_padding_topandbottom_btn"
-        android:paddingBottom="@dimen/main_padding_topandbottom_btn"
-        android:paddingLeft="@dimen/main_padding_leftandright_btn"
-        android:paddingRight="@dimen/main_padding_leftandright_btn"
-        android:background="@color/main_start_record_gif_bk"
-        android:layout_gravity="center"
-        android:onClick="onMainBtnClick"
-        android:gravity="center"/>
+  <TextView
+      android:id="@+id/main_start_record_gif_tv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:text="@string/start_record_text_btn"
+      android:layout_weight="1"
+      android:textSize="@dimen/main_text_size"
+      android:background="@color/main_start_record_gif_bk"
+      android:layout_gravity="center"
+      android:onClick="onMainBtnClick"
+      android:gravity="center"/>
 
-    <TextView
-        android:id="@+id/main_open_record_gif_tv"
-        android:layout_width="@dimen/main_btn_width"
-        android:layout_height="wrap_content"
-        android:text="@string/open_gif_file_text_btn"
-        android:paddingTop="@dimen/main_padding_topandbottom_btn"
-        android:paddingBottom="@dimen/main_padding_topandbottom_btn"
-        android:paddingLeft="@dimen/main_padding_leftandright_btn"
-        android:paddingRight="@dimen/main_padding_leftandright_btn"
-        android:background="@color/main_open_record_gif_bk"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/main_padding_topandbottom_btn"
-        android:onClick="onMainBtnClick"
-        android:gravity="center"/>
+  <TextView
+      android:id="@+id/main_make_record_gif_tv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:text="@string/start_make_text_btn"
+      android:layout_weight="1"
+      android:textSize="@dimen/main_text_size"
+      android:background="@color/main_start_make_gif_bk"
+      android:layout_gravity="center"
+      android:onClick="onMainBtnClick"
+      android:gravity="center"/>
 
-
-  </LinearLayout>
-
-</RelativeLayout>
+  <TextView
+      android:id="@+id/main_open_record_gif_tv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:text="@string/open_gif_file_text_btn"
+      android:layout_weight="1"
+      android:textSize="@dimen/main_text_size"
+      android:background="@color/main_open_record_gif_bk"
+      android:layout_gravity="center"
+      android:onClick="onMainBtnClick"
+      android:gravity="center"/>
+</LinearLayout>

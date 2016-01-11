@@ -4,7 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="main_start_record_gif_bk">#ff4400</color>
-    <color name="main_open_record_gif_bk">#ff6600</color>
+    <color name="main_start_record_gif_bk">#ff2200</color>
+    <color name="main_start_make_gif_bk">#884400</color>
+
+    <color name="main_open_record_gif_bk">#44aa00</color>
 
 </resources>
